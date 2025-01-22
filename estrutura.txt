@@ -1,0 +1,21 @@
+/Trabalho WH
+├── app_heritage.py
+├── WorldHeritage.db
+├── querys_funcoes.py
+└── templates/
+    └── query1.html
+    └── query2.html
+    └── query3.html
+    └── query4.html
+    └── query5.html
+    └── query6.html
+    └── query7.html
+    └── query8.html
+    └── query9.html
+    └── query10.html
+    └── query11.html
+    └── query12.html
+    └── home.html
+    └── results.html
+    └── region_results.html
+

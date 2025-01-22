@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - World Heritage</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">World Heritage</h1>
+
+        <hr class="my-5">
+        <h3>Lista completa de sítios</h3>
+        <a href="/list_sites" class="btn btn-secondary">Listar todos os sítios</a>
+
+        <hr class="my-5">
+
+        <!-- Display Categories Table -->
+        <h2>Categorias disponíveis</h2>
+        {% if categories %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Categoria</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for category in categories %}
+                <tr>
+                    <td>{{ category }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p class="text-danger">Não existem categorias disponíveis.</p>
+        {% endif %}
+
+        <!-- Formulário para pesquisa por Categoria -->
+        <h3>Procura sítios por categoria</h3>
+        <form method="POST" action="/">
+            <div class="mb-3">
+                <label for="category" class="form-label">Insere uma categoria:</label>
+                <input type="text" id="category" name="category" class="form-control" placeholder="">
+            </div>
+            <button type="submit" name="search_category" class="btn btn-primary">Procura por categoria</button>
+        </form>
+
+        <hr class="my-5">
+
+        <!-- Display Regions Table -->
+        <h2>Regiões disponíveis</h2>
+        {% if regions %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Região</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for region in regions %}
+                <tr>
+                    <td>{{ region }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p class="text-danger">Não existem regiões disponíveis.</p>
+        {% endif %}
+
+        <!-- Formulário para pesquisa por Região -->
+        <h3>Procura sítios por regiões</h3>
+        <form method="POST" action="/">
+            <div class="mb-3">
+                <label for="region" class="form-label">Insere uma região:</label>
+                <input type="text" id="region" name="region" class="form-control" placeholder="">
+            </div>
+            <button type="submit" name="search_region" class="btn btn-primary">Procura por região</button>
+        </form>
+
+        <hr class="my-5">
+
+        <!-- Links para outras perguntas -->
+        <h2 class="mt-5">Outras Perguntas</h2>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <a href="/q1">Q1 - Qual a categoria com mais sítios?</a>
+            </li>
+            <li class="list-group-item">
+                <a href="/q2">Q2 - Quantos sítios distintos existem em cada região?</a>
+            </li>
+            <li class="list-group-item">
+                <a href="/q3">Q3 - Qual o estado com mais sítios?</a>
+            </li>
+            <li class="list-group-item">
+                <a href="/q4">Q4 - Qual sítio tem a maior área?</a>
+            </li>
+            <li class="list-group-item">
+                <a href="/q5">Q5 - Como definir a categoria com base nos critérios?</a>
+            </li>
+            <li class="list-group-item">
+                <a href="/q6">Q6 - Qual a duração na lista dos sítios que foram excluídos da lista de sítos em perigo?</a>
+            </li>
+            <li class="list-group-item">
+                <a href="/q7">Q7 - Quais são os sítios que pertencem à lista há mais tempo?</a>
+            </li>
+            <li class="list-group-item">
+                <a href="/q8">Q8 - Qual é a categoria predominante nas regiões?</a>
+            </li>
+            <li class="list-group-item">
+                <a href="/q9">Q9 - Que categoria tem mais sítios em perigo?</a>
+            </li>
+            <li class="list-group-item">
+                <a href="/q10">Q10 - Quais os sítios que pertencem a mais do que um estado (transfronteiriços)?</a>
+            </li>
+            <li class="list-group-item">
+                <a href="/q11">Q11 - Quantos sítios entraram na lista em cada ano?</a>
+            </li>
+            <li class="list-group-item">
+                <a href="/q12">Q12 - Em que anos houve mais revisões?</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html> 
